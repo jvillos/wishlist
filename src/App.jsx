@@ -39,11 +39,11 @@ function App() {
             <li
               key={wish.id}
               className={`wish-list__item
-           ${wish.completed ? "wish-list__item--done" : ""}
-          `}
+              ${wish.completed ? "wish-list__item--done" : ""}
+              `}
             >
-              <input type="checkbox" checked={wish.completed} />
-              <label>{wish.text}</label>
+              <input id={wish.id} type="checkbox" checked={wish.completed} />
+              <label htmlFor={wish.id}>{wish.text}</label>
             </li>
           ))}
         </ul>
