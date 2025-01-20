@@ -1,6 +1,6 @@
 import React from "react";
 
-function WishlistItem({ wish }) {
+function WishlistItem({ wish, onCompletedChange }) {
   return (
     <li
       key={wish.id}
@@ -8,7 +8,12 @@ function WishlistItem({ wish }) {
                 ${wish.completed ? "wish-list__item--done" : ""}
                 `}
     >
-      <input id={wish.id} type="checkbox" checked={wish.completed} />
+      <input
+        id={wish.id}
+        type="checkbox"
+        checked={wish.completed}
+        onChange={(e) => onCompletedChange(e.target.checked)}
+      />
       <label htmlFor={wish.id}>{wish.text}</label>
     </li>
   );

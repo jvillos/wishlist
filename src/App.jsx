@@ -40,7 +40,7 @@ function App() {
       <div className="app">
         <h1>My wishlist</h1>
         <WishImput onNewWish={onNewWishHandler} />
-        <Wishlist wishes={wishes} />
+        <Wishlist wishes={wishes} setWishes={setWishes} />
       </div>
     </>
   );
