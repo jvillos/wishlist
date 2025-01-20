@@ -30,7 +30,7 @@ function App() {
 
   const [wishes, setWishes] = useState(initialWishes);
 
-  const onNewWish = (NewWish) => {
+  const onNewWishHandler = (NewWish) => {
     //function to be used bellow
     setWishes((currentWishes) => [...currentWishes, NewWish]); //destructuring the array and adding the newWish
   };
@@ -39,7 +39,7 @@ function App() {
     <>
       <div className="app">
         <h1>My wishlist</h1>
-        <WishImput onNewWish={onNewWish} />
+        <WishImput onNewWish={onNewWishHandler} />
         <Wishlist wishes={wishes} />
       </div>
     </>

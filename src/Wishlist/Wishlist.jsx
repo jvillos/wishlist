@@ -1,18 +1,12 @@
 import React from "react";
+import WishlistItem from "./WishlistItem";
 
 function Wishlist({ wishes }) {
+  //it is good practice to write the key on the component, even though it would not be necessary
   return (
     <ul className="wish-list">
       {wishes.map((wish) => (
-        <li
-          key={wish.id}
-          className={`wish-list__item
-                ${wish.completed ? "wish-list__item--done" : ""}
-                `}
-        >
-          <input id={wish.id} type="checkbox" checked={wish.completed} />
-          <label htmlFor={wish.id}>{wish.text}</label>
-        </li>
+        <WishlistItem key={wish.id} wish={wish} />
       ))}
     </ul>
   );
