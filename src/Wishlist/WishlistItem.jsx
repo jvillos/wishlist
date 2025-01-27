@@ -3,7 +3,6 @@ import React from "react";
 function WishlistItem({ wish, onCompletedChange }) {
   return (
     <li
-      key={wish.id}
       className={`wish-list__item
                 ${wish.completed ? "wish-list__item--done" : ""}
                 `}
