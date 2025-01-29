@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
 import WishImput from "./WishImput/WishImput";
-import Wishlist from "./Wishlist/Wishlist";
+import Wishlist from "./Wishlist";
+import GeneralButton from "./components/GeneralButton";
 
 const initialWishes = [
   {
@@ -41,6 +42,12 @@ function App() {
         <h1>My wishlist</h1>
         <WishImput onNewWish={onNewWishHandler} />
         <Wishlist wishes={wishes} setWishes={setWishes} />
+        <GeneralButton
+          actionFunction={() =>
+            setWishes(wishes.filter((wish) => !wish.completed))
+          }
+          displayText={"Archive wishes"}
+        />
       </div>
     </>
   );

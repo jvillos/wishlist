@@ -6,15 +6,20 @@ function WishlistItem({ wish, onCompletedChange }) {
   useEffect(() => {
     console.log("Component created/executed: " + wish.text);
     let ageInterval;
+
     if (!wish.completed) {
       //if the wish is not completed we start a timer that is adding 1 each second to the age
       ageInterval = setInterval(() => {
-        setAge((currentAge) => currentAge + 1);
+        setAge((currentAge) => {
+          //console.log(`Wish ${wish.text} Age: ${currentAge + 1}`);
+          return currentAge + 1;
+        });
       }, 1000);
     } else {
       setAge(0);
       clearInterval(ageInterval);
     }
+    return () => clearInterval(ageInterval);
   }, [wish.completed]);
 
   return (

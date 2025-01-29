@@ -1,5 +1,5 @@
 import React from "react";
-import WishlistItem from "./WishlistItem";
+import WishlistItem from "./Wishlist/WishlistItem";
 
 function Wishlist({ wishes, setWishes }) {
   const onCompletedChangeHandler = (checked, i) => {
